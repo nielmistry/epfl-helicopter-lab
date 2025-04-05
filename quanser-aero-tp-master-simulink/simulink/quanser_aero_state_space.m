@@ -1,13 +1,20 @@
 quanser_aero_parameters;
 
 %% State-Space Representation
-A = [];
+A = [ 0           1            0            0;
+     -Ksp/Jp    -Dp/Jp         0            0;
+      0         0             0            1;
+      0         0             0         -Dy/Jy];
 
-B = [];
+B = [ 0              0;
+      Kpp/Jp     Kpy/Jp;
+      0              0;
+      Kyp/Jy     Kyy/Jy];
 
-C = [];
+C = [ 1  0  0  0;
+      0  0  1  0];
 
-D = [];
+D = zeros(2,2);
 
 
 Ampc = [];
