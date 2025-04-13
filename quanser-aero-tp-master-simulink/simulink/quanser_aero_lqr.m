@@ -5,7 +5,7 @@ quanser_aero_parameters;
 quanser_aero_state_space;
 
 %% State-Feedback LQR Control Design
-Q = [];
-R = [];
+Q = 1000*diag([100 10 100 10]);
+R = diag([100 100]);
 
 K = lqr(A,B,Q,R)
